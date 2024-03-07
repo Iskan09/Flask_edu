@@ -10,7 +10,6 @@ class Users(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(50), unique=True)
     psw = db.Column(db.String(500), nullable=True)
-    date = db.Column(db.DateTime, default=datetime.utcnow)
     name = db.Column(db.String(30), unique=True)
 
 
@@ -28,4 +27,4 @@ class Flat(db.Model):
     city: str = db.Column(db.String(100), unique=True)
     rooms: str = db.Column(db.String(50), unique=True)
     datatime: str = db.Column(db.String(50), unique=True)
-    area: str = db.Column(db.DateTime, default=datetime.utcnow, )
+    img: str = db.Column(db.String(500), unique=True)

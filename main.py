@@ -5,13 +5,15 @@ import random
 
 @app.route("/")
 def index_1():
-    cat_name = "Chsuke"
+    cat_name = "Chosuke"
     return render_template("cats.html", cat_name=cat_name)
+
 
 @app.route("/flats/")
 def flats_view():
     flats = Flat.query.all()
     return render_template("flats.html", flats=flats)
+
 
 @app.route(f"/random/<number_1>/<number_2>/")
 def index_2(number_1, number_2):

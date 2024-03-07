@@ -2,12 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>My site</title>
 </head>
 <body>
+    <thead>
+        <table align="center">
+            <tr>
+                <td class="t1"><a class="t2" href="">My house</a></td>
+                <td class="t1"><a class="t1" href="">О нас</a></td>
+                <td class="t1"><a class="t1" href="">Каталог</a></td>
+                <td class="t1"><a class="t1" href="">Отзывы</a></td>
+                <td class="t1"><a class="t1" href="">Карта</a></td>
+                <td class="t1"><a class="t1" href="">Подать обьявление</a></td>
+                <td class="t1"><a class="t1" href="">Новинки</a></td>
+                <td class="t1"><a class="t1" href="">Закладки</a></td>
+            </tr>
+        </table>
+        <table align="center">
+            <tr>
+                <td class="t3">
+                    <h1 class="t3">Арендуй квартиры <br> по всей России</h1>
+                    <p>Наши квартиры можно арендовать</p>
+                    <p class="yellow_p">по предоплате 20%</p>
+                </td>
+                <td><p><img src="arenda-kvartir.jpg" alt="Ошибка загрузки" width="600"></p></td>
+            </tr>
+        </table>
+    </thead>
+
+    <h1 class="h1_1">Узнай, почему мы лучшая <br> компания России</h1>
+
+    <thead>
+        <table class="t2">
+            <tr>
+                <td class="t2"><p class="yellow_t">10 лет</p><p>На рынке <br> недвижимости</p></td>
+                <td class="t2"><p class="yellow_t">20 %</p><p>Для постоянных <br> клиентов скидка</p></td>
+                <td class="t2"><p class="yellow_t">150</p><p>Квалифицированных <br> сотрудников</p></td>
+                <td class="t2"><p class="yellow_t">5465</p><p>База квартир <br> по России</p></td>
+                <td class="t2"><p class="yellow_t">1300000</p><p>Клиентов по всему <br> миру</p></td>
+            </tr>
+        </table>
+    </thead>
+
+    <table align="center" width="70%" border="1">
+        <tr>
+            <td>
+                <p class="yellow_t2">Цена</p>
+                <form>
+                    <label>от <input type="text"></label>
+                    <label>до <input type="text"></label>
+                </form>
+            </td>
+            <td>
+                <p class="yellow_t2">Санузел</p>
+                <select>
+                    <option>Вариант 1</option>
+                    <option>Вариант 2</option>
+                </select>
+            </td>
+            <td>
+                <p class="yellow_t2">Город</p>
+                <select>
+                    <option>Вариант 1</option>
+                    <option>Вариант 2</option>
+                </select>
+            </td>
+            <td>
+                <p class="yellow_t2">Район</p>
+                <select>
+                    <option>Вариант 1</option>
+                    <option>Вариант 2</option>
+                </select>
+            </td>
+            <td>
+                <p class="yellow_t2">Тип строения дома</p>
+                <select>
+                    <option>Вариант 1</option>
+                    <option>Вариант 2</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p class="yellow_t2">Состояние</p>
+                <form>
+                    <label>от <input type="text"></label>
+                    <label>до <input type="text"></label>
+                </form>
+            </td>
+            <td>
+                <p class="yellow_t2">Мебель</p>
+                <select>
+                    <option>Вариант 1</option>
+                    <option>Вариант 2</option>
+                </select>
+           </td>
+            <td>
+                <p class="yellow_t2">Колличество комнат</p>
+                <form>
+                    <label>от <input type="text"></label>
+                    <label>до <input type="text"></label>
+                </form>
+            </td>
+            <td>
+                <p class="yellow_t2">Этаж</p>
+                <form>
+                    <label>от <input type="text"></label>
+                    <label>до <input type="text"></label>
+                </form>
+            </td>
+            <td>
+                <p class="yellow_t2">Период аренды</p>
+                <select>
+                    <option>Вариант 1</option>
+                    <option>Вариант 2</option>
+                </select>
+            </td>
+        </tr>
+    </table>
 {% for flat in flats %}
+    <table align="center" width="30%" border="1">
+    <td>
+        <img src = "{{ flat.img }}" width = "200" height = "200">
+        <td><p>Москва 1-комнатная квартира<br>Мира 121</p></td>
+    </td>
     <h1>{{ flat.name }}</h1>
-    <p>Колличество комнат{{ flat.rooms }}</p>
+    <p>Цена:{{ flat.price }}</p>
+    <p>Колличество комнат:{{ flat.rooms }}</p>
+    <p>Саннузел:{{ flat.bathroom }}</p>
+    <p>Период:{{ flat.period }}</p>
+    <p>Этаж:{{ flat.floor }}</p>
+    <p>ID:{{ flat.id }}</p>
+    <img src = "{{ flat.img }}" width = "200" height = "200">
+    </table>
 {% endfor %}
 </body>
 </html>
